@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>Scheduling - CASE STUDY</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    body {
+      background-image: url('images/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .python-compiler {
+      margin-top: 20px;
+    }
+
+    .copy {
+      /* button */
+      --button-bg: #353434;
+      --button-hover-bg: #464646;
+      --button-text-color: #CCCCCC;
+      --button-hover-text-color: #8bb9fe;
+      --button-border-radius: 10px;
+      --button-diameter: 36px;
+      --button-outline-width: 1px;
+      --button-outline-color: rgb(141, 141, 141);
+      /* tooltip */
+      --tooltip-bg: #f4f3f3;
+      --toolptip-border-radius: 4px;
+      --tooltip-font-family: Menlo, Roboto Mono, monospace;
+      --tooltip-font-size: 12px;
+      --tootip-text-color: rgb(50, 50, 50);
+      --tooltip-padding-x: 7px;
+      --tooltip-padding-y: 7px;
+      --tooltip-offset: 8px;
+    }
+
+    .copy {
+      box-sizing: border-box;
+      width: var(--button-diameter);
+      height: var(--button-diameter);
+      border-radius: var(--button-border-radius);
+      background-color: var(--button-bg);
+      color: var(--button-text-color);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      outline: none;
+    }
+
+    .tooltip {
+      position: absolute;
+      opacity: 0;
+      visibility: 0;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font: var(--tooltip-font-size) var(--tooltip-font-family);
+      color: var(--tootip-text-color);
+      background: var(--tooltip-bg);
+      padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+      border-radius: var(--toolptip-border-radius);
+      pointer-events: none;
+      transition: all var(--tooltip-transition-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .tooltip::before {
+      content: attr(data-text-initial);
+    }
+
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+      width: var(--tooltip-padding-y);
+      height: var(--tooltip-padding-y);
+      background: inherit;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      z-index: -999;
+      pointer-events: none;
+    }
+
+    .copy svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .checkmark {
+      display: none;
+    }
+
+    /* actions */
+    .copy:hover .tooltip,
+    .copy:focus:not(:focus-visible) .tooltip {
+      opacity: 1;
+      visibility: visible;
+      top: calc((100% + var(--tooltip-offset)) * -1);
+    }
+
+    .copy:focus:not(:focus-visible) .tooltip::before {
+      content: attr(data-text-end);
+    }
+
+    .copy:focus:not(:focus-visible) .clipboard {
+      display: none;
+    }
+
+    .copy:focus:not(:focus-visible) .checkmark {
+      display: block;
+    }
+
+    .copy:hover,
+    .copy:focus {
+      background-color: var(--button-hover-bg);
+    }
+
+    .copy:active {
+      outline: var(--button-outline-width) solid var(--button-outline-color);
+    }
+
+    .copy:hover svg {
+      color: var(--button-hover-text-color);
+    }
+
+    .code-container {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+
+    .copy-button {
+      display: block;
+      width: 100px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .copy-button:hover {
+      background-color: #0056b3;
+    }
+
+    .code-box {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #e3d9d9;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow-x: auto;
+    }
+
+    .code-box pre {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container" aria-label="Main navigation">
+        <a class="navbar-brand" href="index.html">
+          <span>OS CASE STUDY</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="">PROCESS <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+            </li>
+            <li class="nav-item">
+              <form class="form-inline" role="search">
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2 style="color:white;">
+            Scheduling Service
+          </h2>
+          <p style="color:white;">
+            Effective CPU scheduling is key to system performance. Learn about our advanced scheduling algorithms and optimization techniques.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="detail-box">
+              <p style="color:white;">
+                Here, you can provide detailed information about your scheduling service.
+              </p>
+              <!-- You can add more content or interactive elements here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Box with Copy Button -->
+  <section class="code-box">
+    <button class="copy" onclick="copyToClipboard()">
+      <span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="tooltip"></span>
+      <span>
+        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+          <g>
+            <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+          </g>
+        </svg>
+        <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+          <g>
+            <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+          </g>
+        </svg>
+      </span>
+    </button>
+    
+    <pre id="code">
+class Process:
+  def __init__(self, pid, burst_time, priority):
+      self.pid = pid
+      self.burst_time = burst_time
+      self.priority = priority
+  
+  def priority_scheduling(processes):
+      processes.sort(key=lambda x: x.priority)  
+      current_time = 0
+      waiting_time = 0
+      total_waiting_time = 0
+      turnaround_time = 0
+  
+      print("Gantt Chart:")
+      for process in processes:
+          print("|--P{}--|".format(process.pid), end="")
+          waiting_time += current_time
+          current_time += process.burst_time  
+          turnaround_time += current_time
+          total_waiting_time += waiting_time
+  
+      avg_waiting_time = total_waiting_time / len(processes)
+      avg_turnaround_time = turnaround_time / len(processes)
+  
+      print("\nAverage Waiting Time:", avg_waiting_time)
+      print("Average Turnaround Time:", avg_turnaround_time)
+  
+  
+  def input_processes():
+      processes = []
+      n = int(input("Enter the number of processes: "))
+      for i in range(1, n + 1):
+          pid = int(input("Enter process ID for process {}: ".format(i)))
+          burst_time = int(input("Enter burst time for process {}: ".format(i)))
+          priority = int(input("Enter priority for process {}: ".format(i)))
+          processes.append(Process(pid, burst_time, priority))
+      return processes
+  
+  
+  if __name__ == "__main__":
+      processes = input_processes()
+      priority_scheduling(processes)
+  
+    </pre>
+  </section>
+
+  <!-- Python Compiler -->
+  <section class="python-compiler">
+    <div class="code-container">
+      <iframe src="https://trinket.io/embed/python3" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+  <script>
+    function copyToClipboard() {
+      const codeElement = document.getElementById('code');
+      const range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+
+      try {
+        document.execCommand('copy');
+        // Update tooltip text on success
+        const tooltip = document.querySelector('.tooltip');
+        tooltip.setAttribute('data-text-initial', 'Copied!');
+        tooltip.style.visibility = 'visible';
+        setTimeout(() => {
+          tooltip.setAttribute('data-text-initial', 'Copy to clipboard');
+          tooltip.style.visibility = 'hidden';
+        }, 2000);
+      } catch (err) {
+        alert('Failed to copy code');
+      }
+
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>FreeBSD Syscalls</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    .heading-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .heading-container h1 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: #333;
+      font-size: 2.5em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #f3ec78, #af4261);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .syscall-section {
+      margin: 30px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .syscall-section h2 {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 2em;
+      background: linear-gradient(90deg, #f3ec78, #af4261);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .syscall-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .syscall-images img {
+      max-width: 30%;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .syscall-images img.large {
+      max-width: 45%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="Hero background image">
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container" aria-label="Main navigation">
+          <a class="navbar-brand" href="index.html">
+            <span>OS CASE STUDY</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="process.html">PROCESS</a>
+              </li>
+              <li class="nav-item">
+                <form class="form-inline" role="search">
+                  <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="content-container">
+      <div class="heading-container">
+        <h1>FreeBSD Syscalls</h1>
+      </div>
+    </section>
+
+    <section class="content-container">
+      <div class="syscall-section">
+        <h2>Read Syscall</h2>
+        <div class="syscall-images">
+          <img src="images/r1.jpg" alt="Read syscall image 0" >
+          <img src="images/s1.jpg" alt="Read syscall image 1" >
+          <img src="images/s2.jpg" alt="Read syscall image 2" >
+        </div>
+      </div>
+
+      <div class="syscall-section">
+        <h2>Write Syscall</h2>
+        <div class="syscall-images">
+          <img src="images/s4,1.jpg" alt="Write syscall image 1">
+          <img src="images/s4,2.jpg" alt="Write syscall image 2">
+          <img src="images/s43.jpg" alt="Write syscall image 3">
+        </div>
+      </div>
+
+      <div class="syscall-section">
+        <h2>Fork Syscall</h2>
+        <div class="syscall-images">
+          <img src="images/f1.jpg" alt="Fork syscall image 1">
+          <img src="images/f2.jpg" alt="Fork syscall image 2">
+          <img src="images/f3.jpg" alt="Fork syscall image 3">
+        </div>
+      </div>
+
+      <div class="syscall-section">
+        <h2>m-Map Syscall</h2>
+        <div class="syscall-images">
+          <img src="images/m1.jpg" alt="Map syscall image 1">
+          <img src="./images/2m.jpg" alt="Map syscall image 2">
+          <img src="images/m3.jpg" alt="Map syscall image 3">
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+</body>
+
+</html>

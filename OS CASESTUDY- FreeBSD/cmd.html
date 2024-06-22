@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>CASE STUDY</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    .command-container {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .command-box {
+      padding: 15px;
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    .command-image {
+      max-width: 1120px;
+      margin-right: 15px;
+    }
+
+    .service_section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9; /* Just for visualization */
+      padding: 50px 0; /* Adjust padding as needed */
+    }
+
+    .service_container {
+      max-width: 1200px; /* Limit container width if needed */
+      width: 100%;
+    }
+
+    .commands_section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="Hero background image">
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container" aria-label="Main navigation">
+          <a class="navbar-brand" href="index.html">
+            <span>OS CASE STUDY</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="process.html">PROCESS</a>
+              </li>
+              <li class="nav-item">
+                <form class="form-inline" role="search">
+                  <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="commands_section">
+      <div class="container content-container">
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;background: linear-gradient(90deg, #f3ec78, #af4261);border-radius: 20px;">COMMANDS-FREE BSD</h2>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="./images/1.jpg" alt="vmstat -i" class="command-image">
+            <p><strong>vmstat -i</strong><br>Displays statistics about system interrupts<br>Interrupt number, count, device name, rate</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/2.jpg" alt="df -h | sort -k 5 -r" class="command-image">
+            <p><strong>df -h | sort -k 5 -r</strong><br>Shows disk usage of all mounted file systems and sort by usage percentage</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/3.jpg" alt="kldstat | sort" class="command-image">
+            <p><strong>kldstat | sort</strong><br>Lists kernel modules and sort them alphabetically</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/4.jpg" alt="w" class="command-image">
+            <p><strong>w</strong><br>Lists all users currently logged in and their sessions</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/5.jpg" alt="kldstat -v | head -n 5" class="command-image">
+            <p><strong>kldstat -v | head -n 5</strong><br>Displays loaded kernel modules with detailed info. and only shows the first 5 lines</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/6.jpg" alt="kldstat | wc -c" class="command-image">
+            <p><strong>kldstat | wc -c</strong><br>Lists the kernel modules and show the total number of characters in the output</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/7.jpg" alt="dmesg | tail -n 10" class="command-image">
+            <p><strong>dmesg | tail -n 10</strong><br>Display the last 10 lines of the system message buffer</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/8.jpg" alt="ifconfig -a" class="command-image">
+            <p><strong>ifconfig -a</strong><br>Used to display detailed information about all network interfaces on the system</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/9.jpg" alt="iostat -x" class="command-image">
+            <p><strong>iostat -x</strong><br>Display detailed information about the system’s disk I/O activity.</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/10.jpg" alt="netstat -rn" class="command-image">
+            <p><strong>netstat -rn</strong><br>Display detailed information about networking routing tables</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/11.jpg" alt="swapinfo" class="command-image">
+            <p><strong>swapinfo</strong><br>Detailed information about memory usage and swap space</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/12.jpg" alt="cat /var/log/messages | grep -i error" class="command-image">
+            <p><strong>cat /var/log/messages | grep -i error</strong><br>Display the contents of a log file and filter for error messages</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/13.jpg" alt="uptime" class="command-image">
+            <p><strong>uptime</strong><br>Display system uptime and load averages</p>
+          </div>
+        </div>
+        
+        <div class="command-container">
+          <div class="command-box">
+            <img src="images/14.jpg" alt="find /home -type f -mtime -7 | less" class="command-image">
+            <p><strong>find /home -type f -mtime -7 | less</strong>
+            </div>
+        </div>
+                <div class="command-container">
+                    <div class="command-box">
+                      <img src="images/15.jpg" alt="uname -a" class="command-image">
+                      <p><strong>uname -a</strong><br>Detailed information about the system’s CPU architecture</p>
+                    </div>
+                  </div>
+                  
+                  <div class="command-container">
+                    <div class="command-box">
+                      <img src="images/16.jpg" alt="pstat -T" class="command-image">
+                      <p><strong>pstat -T</strong><br>Display a summary of system resource usage by process</p>
+                    </div>
+                  </div>
+                  
+                  <div class="command-container">
+                    <div class="command-box">
+                      <img src="images/17.jpg" alt="df -h" class="command-image">
+                      <p><strong>df -h</strong><br>Check available space on mounted file systems</p>
+                    </div>
+                  </div>
+                  
+                  <div class="command-container">
+                    <div class="command-box">
+                      <img src="images/18.jpg" alt="last reboot" class="command-image">
+                      <p><strong>last reboot</strong><br>Show the last few system reboots</p>
+                    </div>
+                  </div>
+                  
+                  <div class="command-container">
+                    <div class="command-box">
+                      <img src="images/19.jpg" alt="ping &lt;hostname&gt;" class="command-image">
+                      <p><strong>ping &lt;hostname&gt;</strong><br>Test network connectivity and diagnose network issues using ping</p>
+                    </div>
+                  </div>
+                  
+              </section>
+          
+            </div>
+          
+            <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="js/custom.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+          </body>
+          
+          </html>

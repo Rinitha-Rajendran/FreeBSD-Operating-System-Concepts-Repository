@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>Process</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    body {
+      background-image: url('images/hero-bg.png');
+      /* Replace 'images/hero-bg.png' with the path to your background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .a {
+      padding-left: 450px;
+      font-size: 40px;
+      color: white;
+    }
+
+    .python-compiler {
+      margin-top: 20px;
+    }
+
+    .code-container {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+
+    .navbar-nav .nav-item .nav-link.active {
+      color: blue !important;
+    }
+
+    .spinner {
+      width: 70.4px;
+      height: 70.4px;
+      --clr: lime;
+      --clr-alpha: transparent;
+      animation: spinner 1.6s infinite ease;
+      transform-style: preserve-3d;
+      position: relative;
+      top: -50px;
+    }
+
+    .spinner > div {
+      background-color: var(--clr-alpha);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      border: 3.5px solid var(--clr);
+    }
+
+    .spinner div:nth-of-type(1) {
+      transform: translateZ(-35.2px) rotateY(180deg);
+    }
+
+    .spinner div:nth-of-type(2) {
+      transform: rotateY(-270deg) translateX(50%);
+      transform-origin: top right;
+    }
+
+    .spinner div:nth-of-type(3) {
+      transform: rotateY(270deg) translateX(-50%);
+      transform-origin: center left;
+    }
+
+    .spinner div:nth-of-type(4) {
+      transform: rotateX(90deg) translateY(-50%);
+      transform-origin: top center;
+    }
+
+    .spinner div:nth-of-type(5) {
+      transform: rotateX(-90deg) translateY(50%);
+      transform-origin: bottom center;
+    }
+
+    .spinner div:nth-of-type(6) {
+      transform: translateZ(35.2px);
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+      }
+
+      50% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+      }
+
+      100% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+      }
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .video-container video {
+      width: 80%;
+      max-width: 1000px;
+      height: auto;
+    }
+
+    .text-box {
+      width: 80%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container" aria-label="Main navigation">
+        <a class="navbar-brand" href="index.html">
+          <span>OS CASE STUDY</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="">PROCESS <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <form class="form-inline" role="search">
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <h2 style="color:white;">
+            Process Synchronization
+          </h2>
+          <p style="color:white;">
+            Process Synchronization is the coordination of execution of multiple processes in a multi-process system to
+            ensure that they access shared resources in a controlled and predictable manner. It aims to resolve the
+            problem of race conditions and other synchronization issues in a concurrent system.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="detail-box">
+              <p style="color:white;">
+                Here, you can provide detailed information about your Process Synchronization
+              </p>
+              <!-- You can add more content or interactive elements here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="a"> Irrigation System in Agriculture</div>
+  <section class="video-container">
+    <video controls>
+      <source src="./videos/irrigation.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="text-box">
+    <h3 style="font-weight: bolder;">Process Synchronization in Agricultural Irrigation System</h3>
+    <p>One scenario in agriculture where process synchronization is crucial is irrigation management in a large farm with multiple fields. Let's consider a farm where there are multiple irrigation pumps (writers) and several sensors (readers) monitoring soil moisture levels in different fields. The challenge is to ensure that:</p>
+    <ul>
+      <li><strong>Mutual Exclusion:</strong> Only one pump can access the irrigation system at a time to avoid conflicts and ensure efficient water distribution.</li>
+      <li><strong>Progress:</strong> The irrigation system should allow pumps to access the system promptly when needed, without being indefinitely blocked by other pumps or sensors.</li>
+      <li><strong>Bounded Waiting:</strong> No pump should be starved of access to the irrigation system for an indefinite amount of time due to the continuous reading of sensors.</li>
+    </ul>
+    <p>To implement this, we can model it using the reader-writer problem. Here's how it would work:</p>
+    <ul>
+      <li><strong>Readers (Sensors):</strong> Sensors continuously monitor soil moisture levels in different fields. They can read the data without interfering with each other. Multiple sensors can read simultaneously without any issues.</li>
+      <li><strong>Writers (Pumps):</strong> Pumps are responsible for irrigating the fields based on the readings from the sensors. However, only one pump should be allowed to access the irrigation system at a time to prevent conflicts.</li>
+    </ul>
+  </section>
+  <section class="text-box">
+    <h3 style="font-weight: bolder;">Process Synchronization in Agricultural Irrigation System</h3>
+    <div style="position: relative;">
+      <pre id="code" style="margin-bottom: 10px;">
+        <code class="language-cpp">
+          #include &lt;iostream&gt;
+          #include &lt;thread&gt;
+          #include &lt;mutex&gt;
+          #include &lt;condition_variable&gt;
+          #include &lt;vector&gt;
+          #include &lt;chrono&gt;
+  
+          std::mutex mtx;
+          std::condition_variable cv;
+          int reader_count = 0;
+          bool writer_present = false;
+          int soil_moisture = 50; // Initial soil moisture level
+  
+          void sensor(int id) {
+              while (true) {
+                  std::unique_lock&lt;std::mutex&gt; lock(mtx);
+                  cv.wait(lock, [] { return !writer_present; });
+                  reader_count++;
+                  lock.unlock();
+  
+                  // Reading the soil moisture level
+                  std::cout &lt;&lt; "Sensor " &lt;&lt; id &lt;&lt; " reads soil moisture: " &lt;&lt; soil_moisture &lt;&lt; std::endl;
+  
+                  lock.lock();
+                  reader_count--;
+                  if (reader_count == 0) {
+                      cv.notify_all();
+                  }
+                  lock.unlock();
+  
+                  // Simulate the time taken to read the moisture level
+                  std::this_thread::sleep_for(std::chrono::milliseconds(100 + rand() % 400));
+              }
+          }
+  
+          void irrigation_pump(int id) {
+              while (true) {
+                  std::unique_lock&lt;std::mutex&gt; lock(mtx);
+                  cv.wait(lock, [] { return reader_count == 0 && !writer_present; });
+                  writer_present = true;
+                  lock.unlock();
+  
+                  // Updating the soil moisture level
+                  soil_moisture += 5; // Simulate irrigation
+                  std::cout &lt;&lt; "Irrigation pump " &lt;&lt; id &lt;&lt; " updates soil moisture to: " &lt;&lt; soil_moisture &lt;&lt; std::endl;
+  
+                  lock.lock();
+                  writer_present = false;
+                  cv.notify_all();
+                  lock.unlock();
+  
+                  // Simulate the time taken to irrigate
+                  std::this_thread::sleep_for(std::chrono::milliseconds(500 + rand() % 1000));
+              }
+          }
+  
+          int main() {
+              srand(time(0)); // Seed for random number generation
+  
+              // Create sensor and irrigation pump threads
+              std::vector&lt;std::thread&gt; sensors;
+              std::vector&lt;std::thread&gt; pumps;
+  
+              for (int i = 0; i &lt; 5; ++i) {
+                  sensors.push_back(std::thread(sensor, i + 1));
+              }
+  
+              for (int i = 0; i &lt; 2; ++i) {
+                  pumps.push_back(std::thread(irrigation_pump, i + 1));
+              }
+  
+              // Join threads (in a real application, you might have a different mechanism to terminate threads)
+              for (auto&amp; t : sensors) {
+                  t.join();
+              }
+  
+              for (auto&amp; t : pumps) {
+                  t.join();
+              }
+  
+              return 0;
+          }
+        </code>
+      </pre>
+      <button onclick="copyToClipboard()" style="position: absolute; right: 10px; top: 10px; background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Copy</button>
+      <iframe src="https://wandbox.org" style="width: 100%; height: 500px; border: none; margin-top: 20px;"></iframe>
+    </div>
+  </section>
+  
+  <script>
+    function copyToClipboard() {
+      const codeElement = document.getElementById('code');
+      const range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+  
+      try {
+        document.execCommand('copy');
+        alert('Code copied to clipboard');
+      } catch (err) {
+        alert('Failed to copy code');
+      }
+  
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+  
+  
+  
+  
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+</body>
+
+</html>

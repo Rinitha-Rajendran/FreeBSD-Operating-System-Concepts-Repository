@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>CASE STUDY</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .code-container {
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .code-box {
+      width: 100%;
+      padding: 15px;
+      background-color: #f7f7f7;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="images/hero-bg.png" alt="Hero background image">
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container" aria-label="Main navigation">
+          <a class="navbar-brand" href="index.html">
+            <span>OS CASE STUDY</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">PROCESS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+              </li>
+              <li class="nav-item">
+                <form class="form-inline" role="search">
+                  <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <h2 style="color: white;">Memory Management</h2>
+        <p style="color: white;">Memory management is a crucial aspect of operating systems. It involves the allocation and deallocation of memory blocks to various programs as needed. Here's an example of a memory management algorithm implemented in Python:</p>
+        <img src="images/mm3.jpg" alt="Memory Management Image" style="width: 100%; margin-bottom: 20px;">
+        <div class="code-container">
+          <pre class="code-box" id="code">
+        import math
+
+        # Size of vector of pairs
+        size = 0
+        
+        # Global list of lists to store
+        # address ranges available in free list
+        free_list = [[] for _ in range(100000)]
+        
+        # Dictionary used as a hash map to store the starting
+        # address as key and size of allocated segment
+        # as the value
+        mp = {}
+        
+        def initialize(sz):
+            global size
+        
+            # Maximum number of powers of 2 possible
+            n = math.ceil(math.log(sz) / math.log(2))
+            size = n + 1
+        
+            for i in range(size):
+                free_list[i].clear()
+        
+            # Initially the whole block of specified
+            # size is available, starting from address 1
+            free_list[n].append((1, sz))
+        
+        def allocate(sz):
+            global size
+        
+            # Calculate index in free list
+            # to search for a block if available
+            n = math.ceil(math.log(sz) / math.log(2))
+        
+            # Block available
+            if len(free_list[n]) > 0:
+                temp = free_list[n][0]
+        
+                # Remove block from free list
+                free_list[n].pop(0)
+                print("Memory from", temp[0], "to", temp[1], "allocated")
+        
+                # Map starting address with
+                # size to make deallocating easy
+                mp[temp[0]] = temp[1] - temp[0] + 1
+            else:
+                i = n + 1
+                while i < size and not free_list[i]:
+                    i += 1
+        
+                # If no such block is found
+                # i.e., no memory block available
+                if i == size:
+                    print("Sorry, failed to allocate memory")
+                else:
+                    temp = free_list[i][0]
+        
+                    # Remove first block to split it into halves
+                    free_list[i].pop(0)
+                    i -= 1
+        
+                    while i >= n:
+                        # Divide block into two halves
+                        pair1 = (temp[0], temp[0] + (temp[1] - temp[0]) // 2)
+                        pair2 = (temp[0] + (temp[1] - temp[0] + 1) // 2, temp[1])
+        
+                        # Push them in free list
+                        free_list[i].append(pair1)
+                        free_list[i].append(pair2)
+                        temp = free_list[i][0]
+        
+                        # Remove first free block to further split
+                        free_list[i].pop(0)
+                        i -= 1
+        
+                    print("Memory from", temp[0], "to", temp[1], "allocated")
+                    mp[temp[0]] = temp[1] - temp[0] + 1
+        
+        # Driver code
+        def main():
+            # Uncomment the following code for interactive IO
+            '''
+            total = int(input())
+            initialize(total)
+            while True:
+                req = int(input())
+                if req < 0:
+                    break
+                allocate(req)
+            '''
+        
+            initialize(128)
+            allocate(32)
+            allocate(7)
+            allocate(64)
+            allocate(56)
+        
+        # Correcting the '__name__' check
+        if __name__ == "__main__":
+            main()
+            
+          </pre>
+          <button class="copy-btn" onclick="copyCode()">Copy</button>
+        </div>
+        <iframe src="https://trinket.io/embed/python3" width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <script>
+      function copyCode() {
+        const codeBox = document.getElementById('code');
+        const range = document.createRange();
+        range.selectNodeContents(codeBox);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        try {
+          document.execCommand('copy');
+          alert('Code copied to clipboard');
+        } catch (err) {
+          alert('Failed to copy code');
+        }
+        selection.removeAllRanges();
+      }
+    </script>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+</body>
+
+</html>
